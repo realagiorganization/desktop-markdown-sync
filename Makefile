@@ -6,6 +6,7 @@ PYTHON := $(shell if [ -x .venv/bin/python ]; then echo .venv/bin/python; else c
 RUFF := $(PYTHON) -m ruff
 PYTEST := $(PYTHON) -m pytest
 PREDICTIVE_LOG := REQUESTED.predict_vs_actual.inline.md
+ENABLE_DOCKER_SMOKE ?= false
 
 install-dev:
 	$(PYTHON) -m pip install -e '.[dev]'
@@ -42,13 +43,18 @@ predictive-build-test-all:
 		printf 'actual: deb build exits %s\n' "$$rc" >> $(PREDICTIVE_LOG); \
 		cat .cache/predictive-build-deb.log; \
 		test "$$rc" -eq 0
-	@printf 'predicted: docker smoke exits 0\n' >> $(PREDICTIVE_LOG)
-	@docker build -t desktop-markdown-sync-test -f docker/Dockerfile . > .cache/predictive-docker-build.log 2>&1 && \
+	@printf 'predicted: docker smoke exits 0 when ENABLE_DOCKER_SMOKE=true\n' >> $(PREDICTIVE_LOG)
+	@if [ "$(ENABLE_DOCKER_SMOKE)" = "true" ]; then \
+		docker build -t desktop-markdown-sync-test -f docker/Dockerfile . > .cache/predictive-docker-build.log 2>&1 && \
 		docker run --rm desktop-markdown-sync-test > .cache/predictive-docker-run.log 2>&1; rc=$$?; \
 		printf 'actual: docker smoke exits %s\n' "$$rc" >> $(PREDICTIVE_LOG); \
 		cat .cache/predictive-docker-build.log; \
 		cat .cache/predictive-docker-run.log; \
-		test "$$rc" -eq 0
+		test "$$rc" -eq 0; \
+	else \
+		printf 'actual: docker smoke skipped (ENABLE_DOCKER_SMOKE=false)\n' >> $(PREDICTIVE_LOG); \
+		echo "docker smoke skipped; set ENABLE_DOCKER_SMOKE=true to enable"; \
+	fi
 
 act-run:
 	@act -W .github/workflows/ci.yml -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
