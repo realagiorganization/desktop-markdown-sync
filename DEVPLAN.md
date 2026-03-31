@@ -1,0 +1,8 @@
+# DEVPLAN
+
+- [x] Scaffold the standalone subproject with docs, Makefile, tests, `.deb` packaging, and GitHub Actions.
+- [x] Keep the existing fixture/OCR workflow integrated instead of dropping it during standalone bootstrap.
+- [x] Add two-way Markdown sync commands alongside snapshot/render-fixture commands.
+- [ ] Exercise the daemon on a live Kali Plasma session and confirm Markdown edits safely rename/reselect desktops.
+- [ ] Expand the reconstruction layer to move matching windows and relaunch richer app intents.
+- [ ] Refresh the fixture set after material workspace changes and expand accessibility collection once AT-SPI is enabled.
