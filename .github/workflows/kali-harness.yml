@@ -1,0 +1,27 @@
+name: kali-harness
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  kali-harness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build Kali harness image
+        run: make docker-harness-build
+
+      - name: Run Kali harness suite and record UI demo
+        run: make docker-harness-test
+
+      - name: Upload Kali harness artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: kali-harness-artifacts
+          path: artifacts/outputs/kali-harness/**

@@ -1,7 +1,11 @@
 # desktop-markdown-sync
 
-[![CI](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/ci.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/ci.yml)
-[![Package](https://img.shields.io/badge/package-Kali%20.deb-557C94)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/ci.yml)
+[![Package](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/package.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/package.yml)
+[![Quality](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/quality.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/quality.yml)
+[![Coverage](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/coverage.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/coverage.yml)
+[![Static Analysis](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/static-analysis.yml)
+[![CodeQL](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/codeql.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/codeql.yml)
+[![Kali Harness](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/kali-harness.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/kali-harness.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 
 `desktop-markdown-sync` is a standalone Kali Linux subproject that keeps KDE Plasma virtual desktops and Markdown descriptions aligned in both directions.
@@ -25,15 +29,20 @@ The repo now has two complementary modes:
 - `skills/desktop-window-fixture-ocr/`: Codex skill for richer screenshot/OCR/accessibility fixture refreshes
 - `packaging/`: systemd user service and `.deb` packaging assets
 - `docker/Dockerfile`: container smoke path for the fixture tooling
+- `docker/KaliHarness.Dockerfile`: Kali Linux harness with a parent-style `/home/standart` mirror and fixture-pack sync
 
 ## Main commands
 
 ```bash
 make install-dev
 make verify
+make quality
+make coverage
+make static-analysis
 make build-deb
 make predictive-build-test-all
 make docker-test
+make docker-harness-test
 make act-run
 ```
 
@@ -41,3 +50,5 @@ make act-run
 
 - Runtime reconstruction is intentionally best effort. Desktop names, current-desktop selection, and explicit launch commands are safe/default paths.
 - The fixture/OCR path is text-first and does not commit screenshots by default.
+- The Kali harness emits `artifacts/outputs/kali-harness/mirror/harness-manifest.json` and records a fixture-pack UI demo video for CI artifact upload.
+- `main` is intended to be merge-protected with required status checks for package, quality, coverage, static analysis, Kali harness, and CodeQL.

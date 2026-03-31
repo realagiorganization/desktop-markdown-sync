@@ -1,0 +1,32 @@
+name: package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install package and dev dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+
+      - name: Build deb package
+        run: make build-deb
+
+      - name: Upload deb artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: desktop-markdown-sync-deb
+          path: dist/*.deb

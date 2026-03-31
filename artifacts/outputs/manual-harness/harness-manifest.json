@@ -1,0 +1,486 @@
+{
+  "home_root": "artifacts/outputs/manual-harness/home/standart",
+  "subproject_root": "artifacts/outputs/manual-harness/home/standart/subprojects/desktop_markdown_sync",
+  "packs": [
+    {
+      "name": "live-desktops",
+      "source_dir": "fixtures",
+      "target_dir": "subprojects/desktop_markdown_sync/fixtures",
+      "file_count": 20,
+      "files": [
+        {
+          "name": "desktop-01.md",
+          "source_sha256": "e3ab9bba015e57aee13f1141a61ee46cf21bc64b82b50be3015628492168b801",
+          "target_sha256": "e3ab9bba015e57aee13f1141a61ee46cf21bc64b82b50be3015628492168b801"
+        },
+        {
+          "name": "desktop-02.md",
+          "source_sha256": "ee14ad1c232ad0c359039240731158c42649b4220c03bb145748b309625b614f",
+          "target_sha256": "ee14ad1c232ad0c359039240731158c42649b4220c03bb145748b309625b614f"
+        },
+        {
+          "name": "desktop-03.md",
+          "source_sha256": "64aede7819356a60a627678a61ad357a3f66111833218f432055c397d1601359",
+          "target_sha256": "64aede7819356a60a627678a61ad357a3f66111833218f432055c397d1601359"
+        },
+        {
+          "name": "desktop-04.md",
+          "source_sha256": "f20f7213a16e24f090a403ef660bd9923fd2f47c7dd7cb9dd1ebbaf94fcf8bea",
+          "target_sha256": "f20f7213a16e24f090a403ef660bd9923fd2f47c7dd7cb9dd1ebbaf94fcf8bea"
+        },
+        {
+          "name": "desktop-05.md",
+          "source_sha256": "82d5e05f7165c1fa6a03e86aab7e1bdff8d58bb6d2c285dcbfc907afa95fd9cb",
+          "target_sha256": "82d5e05f7165c1fa6a03e86aab7e1bdff8d58bb6d2c285dcbfc907afa95fd9cb"
+        },
+        {
+          "name": "desktop-06.md",
+          "source_sha256": "2614a6e6e46c54485f55dd556fe651561e7608c306cf04a95ed399632f901247",
+          "target_sha256": "2614a6e6e46c54485f55dd556fe651561e7608c306cf04a95ed399632f901247"
+        },
+        {
+          "name": "desktop-07.md",
+          "source_sha256": "a502c697a4d2f3dc6a5be33bd60051d93ab4812b7e8bd58be0ff2d398e7ee251",
+          "target_sha256": "a502c697a4d2f3dc6a5be33bd60051d93ab4812b7e8bd58be0ff2d398e7ee251"
+        },
+        {
+          "name": "desktop-08.md",
+          "source_sha256": "d5bb67dc2afccfd55af999ce88097daefa796d42358d683485e7da3341d63be6",
+          "target_sha256": "d5bb67dc2afccfd55af999ce88097daefa796d42358d683485e7da3341d63be6"
+        },
+        {
+          "name": "desktop-09.md",
+          "source_sha256": "9cdae3b6b0fd68e8fc6b2a47ecfbcf478f0f4569c7b7396a878ec77744c73026",
+          "target_sha256": "9cdae3b6b0fd68e8fc6b2a47ecfbcf478f0f4569c7b7396a878ec77744c73026"
+        },
+        {
+          "name": "desktop-10.md",
+          "source_sha256": "f8a55d02eaa572443f86a396d77da1a9f8894685b08487a4ae702a43cf3a0ff6",
+          "target_sha256": "f8a55d02eaa572443f86a396d77da1a9f8894685b08487a4ae702a43cf3a0ff6"
+        },
+        {
+          "name": "desktop-11.md",
+          "source_sha256": "201acf0c6b90e1401ac8d092f05dcbd2cb40f5da7bec11af0b33bd71745a7e57",
+          "target_sha256": "201acf0c6b90e1401ac8d092f05dcbd2cb40f5da7bec11af0b33bd71745a7e57"
+        },
+        {
+          "name": "desktop-12.md",
+          "source_sha256": "4ec9f250fe0f2997b20c9bcf4292298e273d81822aff30e8111601f961353022",
+          "target_sha256": "4ec9f250fe0f2997b20c9bcf4292298e273d81822aff30e8111601f961353022"
+        },
+        {
+          "name": "desktop-13.md",
+          "source_sha256": "c3d5b228969e62875b64f0356c0596f712cf166c2c0f3efae5b41f57119dd780",
+          "target_sha256": "c3d5b228969e62875b64f0356c0596f712cf166c2c0f3efae5b41f57119dd780"
+        },
+        {
+          "name": "desktop-14.md",
+          "source_sha256": "c2ca6b7dd7f9f1f46eff979c4571a7632eff9db8f0c70039c0849eb135042070",
+          "target_sha256": "c2ca6b7dd7f9f1f46eff979c4571a7632eff9db8f0c70039c0849eb135042070"
+        },
+        {
+          "name": "desktop-15.md",
+          "source_sha256": "57047d1ac321e2c7c8e5bcaed9a04e69626c403f15b03dd5a64e01fa3ccf498e",
+          "target_sha256": "57047d1ac321e2c7c8e5bcaed9a04e69626c403f15b03dd5a64e01fa3ccf498e"
+        },
+        {
+          "name": "desktop-16.md",
+          "source_sha256": "2e4e5a76b71fb0af8b32c305da17921537192c5eec30a3b4ba766d1351228c01",
+          "target_sha256": "2e4e5a76b71fb0af8b32c305da17921537192c5eec30a3b4ba766d1351228c01"
+        },
+        {
+          "name": "desktop-17.md",
+          "source_sha256": "30c1d871d48bfb7e35a011b55fb05a55873f1296df15d9bc59e7c8479cafce83",
+          "target_sha256": "30c1d871d48bfb7e35a011b55fb05a55873f1296df15d9bc59e7c8479cafce83"
+        },
+        {
+          "name": "desktop-18.md",
+          "source_sha256": "fd75981ce8c563df9336da31ec6bc86768a927c0fa97e688517ec2edc3d9e04b",
+          "target_sha256": "fd75981ce8c563df9336da31ec6bc86768a927c0fa97e688517ec2edc3d9e04b"
+        },
+        {
+          "name": "desktop-19.md",
+          "source_sha256": "06671727adfceca506ecdd72b7513f1edca917bd6a7282117c9871b24e01b83f",
+          "target_sha256": "06671727adfceca506ecdd72b7513f1edca917bd6a7282117c9871b24e01b83f"
+        },
+        {
+          "name": "desktop-20.md",
+          "source_sha256": "c9d605d737f9d69ef99933320f3e6366e8ae9766914a0d9b686974d3b8a6ba48",
+          "target_sha256": "c9d605d737f9d69ef99933320f3e6366e8ae9766914a0d9b686974d3b8a6ba48"
+        }
+      ]
+    },
+    {
+      "name": "console-games",
+      "source_dir": "fixtures/console-games",
+      "target_dir": "subprojects/desktop_markdown_sync/fixtures/console-games",
+      "file_count": 21,
+      "files": [
+        {
+          "name": "01-super-mario-bros-3.md",
+          "source_sha256": "6ffbe7f251287bcceb0f4895895c8183393eda61f7e8c36e29700ce453fc64b1",
+          "target_sha256": "6ffbe7f251287bcceb0f4895895c8183393eda61f7e8c36e29700ce453fc64b1"
+        },
+        {
+          "name": "02-a-link-to-the-past.md",
+          "source_sha256": "d0709d632dd94fd7da3e9f3e9fdc42af35e926f93c0c329c59adfb9826f7d903",
+          "target_sha256": "d0709d632dd94fd7da3e9f3e9fdc42af35e926f93c0c329c59adfb9826f7d903"
+        },
+        {
+          "name": "03-super-metroid.md",
+          "source_sha256": "eef9d8e12f1c2a9de3bbc9feda08e68611ad501c618221d334cb40c504849d35",
+          "target_sha256": "eef9d8e12f1c2a9de3bbc9feda08e68611ad501c618221d334cb40c504849d35"
+        },
+        {
+          "name": "04-chrono-trigger.md",
+          "source_sha256": "98bca1c22906f24573cf10ee394ab77a18cd73d50b500a399b70540921079dc6",
+          "target_sha256": "98bca1c22906f24573cf10ee394ab77a18cd73d50b500a399b70540921079dc6"
+        },
+        {
+          "name": "05-ocarina-of-time.md",
+          "source_sha256": "74de4b2aeada09dd7ee91085704b692bc34904be92358cabfee7e30c0c67d2d8",
+          "target_sha256": "74de4b2aeada09dd7ee91085704b692bc34904be92358cabfee7e30c0c67d2d8"
+        },
+        {
+          "name": "06-metal-gear-solid.md",
+          "source_sha256": "f7d5ad48e55c032ad0723100b3aeaff28a48672ef535d996c8adfce46643b0a0",
+          "target_sha256": "f7d5ad48e55c032ad0723100b3aeaff28a48672ef535d996c8adfce46643b0a0"
+        },
+        {
+          "name": "07-tony-hawks-pro-skater-2.md",
+          "source_sha256": "e9b6d844c13147bbd61cac8438719855af02d3019e202a46ad4a100dda6523db",
+          "target_sha256": "e9b6d844c13147bbd61cac8438719855af02d3019e202a46ad4a100dda6523db"
+        },
+        {
+          "name": "08-halo-combat-evolved.md",
+          "source_sha256": "a7644a4300f53b47979cd41de365039e0a568fc0bbe0277735230c437ab76776",
+          "target_sha256": "a7644a4300f53b47979cd41de365039e0a568fc0bbe0277735230c437ab76776"
+        },
+        {
+          "name": "09-metroid-prime.md",
+          "source_sha256": "7c5b692511adf4429b5900481378a0edf1fe368428a492cd3cf64a60634a6b58",
+          "target_sha256": "7c5b692511adf4429b5900481378a0edf1fe368428a492cd3cf64a60634a6b58"
+        },
+        {
+          "name": "10-the-wind-waker.md",
+          "source_sha256": "e997eafd20ff9f67d0f921a81970449e4291cc9b6288422bd5ecdf3db060ad65",
+          "target_sha256": "e997eafd20ff9f67d0f921a81970449e4291cc9b6288422bd5ecdf3db060ad65"
+        },
+        {
+          "name": "11-resident-evil-4.md",
+          "source_sha256": "b416975cef718ceed8d83cc659e09a80f28e1757b62523d6da22e6f4d1f08c41",
+          "target_sha256": "b416975cef718ceed8d83cc659e09a80f28e1757b62523d6da22e6f4d1f08c41"
+        },
+        {
+          "name": "12-shadow-of-the-colossus.md",
+          "source_sha256": "307510c586e62550b92820cf0f9072546528dae22c472409f19888ac7dcfed13",
+          "target_sha256": "307510c586e62550b92820cf0f9072546528dae22c472409f19888ac7dcfed13"
+        },
+        {
+          "name": "13-god-of-war-ii.md",
+          "source_sha256": "b9f42155b421e98bbbf9fa3572edb10918589aabee7588b329ed36f0b4fe1316",
+          "target_sha256": "b9f42155b421e98bbbf9fa3572edb10918589aabee7588b329ed36f0b4fe1316"
+        },
+        {
+          "name": "14-super-mario-galaxy.md",
+          "source_sha256": "7b8d92b8ca4171b5efbfe09481a1d957872c8be1c4b29f8031358cf3bb3f0beb",
+          "target_sha256": "7b8d92b8ca4171b5efbfe09481a1d957872c8be1c4b29f8031358cf3bb3f0beb"
+        },
+        {
+          "name": "15-mass-effect-2.md",
+          "source_sha256": "f7312dfeb19348685453c07095ac1cf942a0a132c93d372c34e5cb89b833a3a8",
+          "target_sha256": "f7312dfeb19348685453c07095ac1cf942a0a132c93d372c34e5cb89b833a3a8"
+        },
+        {
+          "name": "16-red-dead-redemption.md",
+          "source_sha256": "30ed4110b0c7cad20b034c12c0ee6579314855d687238f77bd888b679782f1ce",
+          "target_sha256": "30ed4110b0c7cad20b034c12c0ee6579314855d687238f77bd888b679782f1ce"
+        },
+        {
+          "name": "17-the-last-of-us.md",
+          "source_sha256": "c1507b3dc15ae849410cd131327b72916668fe9eedb779f827196e687664ac58",
+          "target_sha256": "c1507b3dc15ae849410cd131327b72916668fe9eedb779f827196e687664ac58"
+        },
+        {
+          "name": "18-bloodborne.md",
+          "source_sha256": "f393029e23093266a7aab37367fdd9c6ab412ee0fba2de324518446ef004b4a6",
+          "target_sha256": "f393029e23093266a7aab37367fdd9c6ab412ee0fba2de324518446ef004b4a6"
+        },
+        {
+          "name": "19-breath-of-the-wild.md",
+          "source_sha256": "e062da60864b1bf59981630297d3b72857a3c233c39d88785e8ee6305f77209d",
+          "target_sha256": "e062da60864b1bf59981630297d3b72857a3c233c39d88785e8ee6305f77209d"
+        },
+        {
+          "name": "20-elden-ring.md",
+          "source_sha256": "ca7a1e063c66ea2d8a80f40d5a52f07c08e7b734243af08d8e6fe5a16f1e7bae",
+          "target_sha256": "ca7a1e063c66ea2d8a80f40d5a52f07c08e7b734243af08d8e6fe5a16f1e7bae"
+        },
+        {
+          "name": "index.md",
+          "source_sha256": "e4edf33110ec2198067041d68210a42347a8897ca3ca8ca3aceddf42290b4582",
+          "target_sha256": "e4edf33110ec2198067041d68210a42347a8897ca3ca8ca3aceddf42290b4582"
+        }
+      ]
+    },
+    {
+      "name": "bhakti",
+      "source_dir": "BHAKTI",
+      "target_dir": "subprojects/desktop_markdown_sync/BHAKTI",
+      "file_count": 21,
+      "files": [
+        {
+          "name": "01-title-screen.md",
+          "source_sha256": "df2549a7203a3004a0684ec3b8807e6c3ba71e4a1d67cb0b588f0deac3f41640",
+          "target_sha256": "df2549a7203a3004a0684ec3b8807e6c3ba71e4a1d67cb0b588f0deac3f41640"
+        },
+        {
+          "name": "02-save-select-screen.md",
+          "source_sha256": "31fe61f831e8a9a4bc197ebee1068b7c42d5f253f1aafe9d69c0c19635f8842f",
+          "target_sha256": "31fe61f831e8a9a4bc197ebee1068b7c42d5f253f1aafe9d69c0c19635f8842f"
+        },
+        {
+          "name": "03-monastery-courtyard-map.md",
+          "source_sha256": "75a7cac71a8ba8744692ae413941e690766e5c3f18ab522573bdd8e28bc81f2e",
+          "target_sha256": "75a7cac71a8ba8744692ae413941e690766e5c3f18ab522573bdd8e28bc81f2e"
+        },
+        {
+          "name": "04-shrine-interaction-screen.md",
+          "source_sha256": "e743cda5495cc00e178656d2709a4d1b2e5987368a3cc7816ae5410ee6b76f13",
+          "target_sha256": "e743cda5495cc00e178656d2709a4d1b2e5987368a3cc7816ae5410ee6b76f13"
+        },
+        {
+          "name": "05-murti-rotation-view.md",
+          "source_sha256": "894073d3a588f5996f2df19ea42870b64abd446d82e583f072b1b66b2a161888",
+          "target_sha256": "894073d3a588f5996f2df19ea42870b64abd446d82e583f072b1b66b2a161888"
+        },
+        {
+          "name": "06-stylus-offering-screen.md",
+          "source_sha256": "f6efd7314c858b7f72c7ad81751b839986cbb548d7839fa8f684a8abac6bb214",
+          "target_sha256": "f6efd7314c858b7f72c7ad81751b839986cbb548d7839fa8f684a8abac6bb214"
+        },
+        {
+          "name": "07-chant-transcript-overlay.md",
+          "source_sha256": "9b95071824e62c70288ae067b473662d69332973045ee69a2d8cdaf90553a369",
+          "target_sha256": "9b95071824e62c70288ae067b473662d69332973045ee69a2d8cdaf90553a369"
+        },
+        {
+          "name": "08-translation-comparison-screen.md",
+          "source_sha256": "af87eeaffbcca89f1d45556d28bc57e715638204f8f855667a06699efe188bfb",
+          "target_sha256": "af87eeaffbcca89f1d45556d28bc57e715638204f8f855667a06699efe188bfb"
+        },
+        {
+          "name": "09-verse-annotation-screen.md",
+          "source_sha256": "952d97a109bc4b85b2abf81847860613281ba7008deb42f2e37d84802c94037f",
+          "target_sha256": "952d97a109bc4b85b2abf81847860613281ba7008deb42f2e37d84802c94037f"
+        },
+        {
+          "name": "10-calligraphy-trace-screen.md",
+          "source_sha256": "c019ec1307b373e661ca0421c8cdad8b2611391bced5371035e8b5e35000e629",
+          "target_sha256": "c019ec1307b373e661ca0421c8cdad8b2611391bced5371035e8b5e35000e629"
+        },
+        {
+          "name": "11-audio-recitation-player.md",
+          "source_sha256": "7ad8bfbda938f2e105f665826d8a2fbee7933dbf8272073df0ae7df5f5568fb7",
+          "target_sha256": "7ad8bfbda938f2e105f665826d8a2fbee7933dbf8272073df0ae7df5f5568fb7"
+        },
+        {
+          "name": "12-library-shelf-browser.md",
+          "source_sha256": "60a8d3a0503674c0c22be040a4c72d0f58508fe38d7cccba47dbbc64e6c568c2",
+          "target_sha256": "60a8d3a0503674c0c22be040a4c72d0f58508fe38d7cccba47dbbc64e6c568c2"
+        },
+        {
+          "name": "13-manuscript-zoom-screen.md",
+          "source_sha256": "f8453ee227e6e06ba38ee4dbd0fadb9b0470a3485db3710a2a06e46bd230d920",
+          "target_sha256": "f8453ee227e6e06ba38ee4dbd0fadb9b0470a3485db3710a2a06e46bd230d920"
+        },
+        {
+          "name": "14-festival-preparation-screen.md",
+          "source_sha256": "2d3e0237235dfc0aad0c9bde10eb4f761fe4cdd24cd5f24d5b462b0c779d4c2a",
+          "target_sha256": "2d3e0237235dfc0aad0c9bde10eb4f761fe4cdd24cd5f24d5b462b0c779d4c2a"
+        },
+        {
+          "name": "15-dialogue-and-teaching-screen.md",
+          "source_sha256": "312ceedfc632d0ce7fb5fcd8dc09a22094a46e2ef056715dec2cd7346871b437",
+          "target_sha256": "312ceedfc632d0ce7fb5fcd8dc09a22094a46e2ef056715dec2cd7346871b437"
+        },
+        {
+          "name": "16-puzzle-seal-screen.md",
+          "source_sha256": "de8e71716eeafe718c691f193c97bce1aa50ae86b05ae0094025a5e1eae7ba69",
+          "target_sha256": "de8e71716eeafe718c691f193c97bce1aa50ae86b05ae0094025a5e1eae7ba69"
+        },
+        {
+          "name": "17-pilgrimage-route-screen.md",
+          "source_sha256": "629cf052aa1a346c40012355e9dda26dcf0e084bed1e7254c2eb691b6752d373",
+          "target_sha256": "629cf052aa1a346c40012355e9dda26dcf0e084bed1e7254c2eb691b6752d373"
+        },
+        {
+          "name": "18-collection-archive-screen.md",
+          "source_sha256": "2fc5a22edd0c24f2bfa9fb34ce69ab4ecc379bec553e7f1c7bcb4268daf9fc57",
+          "target_sha256": "2fc5a22edd0c24f2bfa9fb34ce69ab4ecc379bec553e7f1c7bcb4268daf9fc57"
+        },
+        {
+          "name": "19-daily-practice-summary.md",
+          "source_sha256": "2f6e6c1d0993eba9443578cfc735722b7f543dbec87b56de1fbece5f7fcce7cd",
+          "target_sha256": "2f6e6c1d0993eba9443578cfc735722b7f543dbec87b56de1fbece5f7fcce7cd"
+        },
+        {
+          "name": "20-end-of-session-screen.md",
+          "source_sha256": "2e20d0014ed0e419f74cfdc12cd2e4e78ec85d37829fe7e89387998f9282888d",
+          "target_sha256": "2e20d0014ed0e419f74cfdc12cd2e4e78ec85d37829fe7e89387998f9282888d"
+        },
+        {
+          "name": "index.md",
+          "source_sha256": "9198d35af94dff6cdd49b99b1980def1f5f4192f7e038e9e13520ac9a708de4b",
+          "target_sha256": "9198d35af94dff6cdd49b99b1980def1f5f4192f7e038e9e13520ac9a708de4b"
+        }
+      ]
+    },
+    {
+      "name": "pizzagame",
+      "source_dir": "PIZZAGAME",
+      "target_dir": "subprojects/desktop_markdown_sync/PIZZAGAME",
+      "file_count": 13,
+      "files": [
+        {
+          "name": "01-title-screen.md",
+          "source_sha256": "0a68c5c9966b55a0c90454b36cb5995a980795cf0c4c2480477144511dc3fabb",
+          "target_sha256": "0a68c5c9966b55a0c90454b36cb5995a980795cf0c4c2480477144511dc3fabb"
+        },
+        {
+          "name": "02-mission-dispatch-map.md",
+          "source_sha256": "cd71b220800594c6a449d7cb1cdfe072563ffadad36ff1f52f0b6cff17dc52ca",
+          "target_sha256": "cd71b220800594c6a449d7cb1cdfe072563ffadad36ff1f52f0b6cff17dc52ca"
+        },
+        {
+          "name": "03-street-ride-hud.md",
+          "source_sha256": "eb6711e486703a1efdfb30d7a8cb461b895f9278e29be5e32dfda3c417dccbde",
+          "target_sha256": "eb6711e486703a1efdfb30d7a8cb461b895f9278e29be5e32dfda3c417dccbde"
+        },
+        {
+          "name": "04-parked-sidewalk-hack.md",
+          "source_sha256": "aee392b26a5e6c7bd8d6b7d711064335bb0fe36ebaf016020835c23394c44c55",
+          "target_sha256": "aee392b26a5e6c7bd8d6b7d711064335bb0fe36ebaf016020835c23394c44c55"
+        },
+        {
+          "name": "05-mobile-keyboard-breach.md",
+          "source_sha256": "f10fc3c94352efd26dc20d5841e1b2c799c43dfe2602605944e5a3ee50547f29",
+          "target_sha256": "f10fc3c94352efd26dc20d5841e1b2c799c43dfe2602605944e5a3ee50547f29"
+        },
+        {
+          "name": "06-cctv-relay-view.md",
+          "source_sha256": "ab33cd0ef853bf73ffe83c05ffc39fd99f795b69683d763c956787edef850777",
+          "target_sha256": "ab33cd0ef853bf73ffe83c05ffc39fd99f795b69683d763c956787edef850777"
+        },
+        {
+          "name": "07-delivery-confirmation-screen.md",
+          "source_sha256": "7da86ceff7c9d23e21da048a6682e25ee4623f5e5f8719d5faa1990fcfafa672",
+          "target_sha256": "7da86ceff7c9d23e21da048a6682e25ee4623f5e5f8719d5faa1990fcfafa672"
+        },
+        {
+          "name": "08-scooter-upgrade-garage.md",
+          "source_sha256": "5fcf568133ab21aef4f0db5f1cde0221d74b50aaf63c764ba277cf7d4aed6d76",
+          "target_sha256": "5fcf568133ab21aef4f0db5f1cde0221d74b50aaf63c764ba277cf7d4aed6d76"
+        },
+        {
+          "name": "09-police-evasion-overlay.md",
+          "source_sha256": "27156be7957139db9d4d40ea8d867d071a18efb6a9b25d0dc79048c12b047b19",
+          "target_sha256": "27156be7957139db9d4d40ea8d867d071a18efb6a9b25d0dc79048c12b047b19"
+        },
+        {
+          "name": "10-rooftop-wifi-scan.md",
+          "source_sha256": "4b2b75a80b59921a0891be9605960fa30f3e4c0b95b930229c17561db8a062cc",
+          "target_sha256": "4b2b75a80b59921a0891be9605960fa30f3e4c0b95b930229c17561db8a062cc"
+        },
+        {
+          "name": "11-night-market-inventory-screen.md",
+          "source_sha256": "944d93ccecc9ddbf94f9bded3e788285bf75d8e5167557eb9f2739e4dd7f2c61",
+          "target_sha256": "944d93ccecc9ddbf94f9bded3e788285bf75d8e5167557eb9f2739e4dd7f2c61"
+        },
+        {
+          "name": "12-shift-summary-screen.md",
+          "source_sha256": "dfff98492b16f2c06beaace20f52355b871489b9a19bbfbcd184d6f3cf914cb5",
+          "target_sha256": "dfff98492b16f2c06beaace20f52355b871489b9a19bbfbcd184d6f3cf914cb5"
+        },
+        {
+          "name": "index.md",
+          "source_sha256": "6e02eccc9093c87bae9ef191980b5a8106aced5119b7fc453f9122ee074c8c5b",
+          "target_sha256": "6e02eccc9093c87bae9ef191980b5a8106aced5119b7fc453f9122ee074c8c5b"
+        }
+      ]
+    },
+    {
+      "name": "shipgirls",
+      "source_dir": "SHIPGIRLS",
+      "target_dir": "subprojects/desktop_markdown_sync/SHIPGIRLS",
+      "file_count": 13,
+      "files": [
+        {
+          "name": "01-title-screen.md",
+          "source_sha256": "013f39635949d579bdb65dd30eb1d3eaf0d907386ef5d89e1e28cc2b2a914b20",
+          "target_sha256": "013f39635949d579bdb65dd30eb1d3eaf0d907386ef5d89e1e28cc2b2a914b20"
+        },
+        {
+          "name": "02-monastery-fleet-map.md",
+          "source_sha256": "ceaa2c2f864c0cc632f3ccaffb2d026090754b0e7ee63c76d363f3a652b19986",
+          "target_sha256": "ceaa2c2f864c0cc632f3ccaffb2d026090754b0e7ee63c76d363f3a652b19986"
+        },
+        {
+          "name": "03-carrier-bridge-hud.md",
+          "source_sha256": "405ce46eac50d603367cc3ae31e8206b5e4a6bfe951f7489489e839118486301",
+          "target_sha256": "405ce46eac50d603367cc3ae31e8206b5e4a6bfe951f7489489e839118486301"
+        },
+        {
+          "name": "04-flight-deck-launch-control.md",
+          "source_sha256": "d9201b3e6614b51256c2ce4026565d3d06c66e7adabb76665de65a3a2381bf9d",
+          "target_sha256": "d9201b3e6614b51256c2ce4026565d3d06c66e7adabb76665de65a3a2381bf9d"
+        },
+        {
+          "name": "05-terminal-link-breach.md",
+          "source_sha256": "af060007446747828b9f669b8933b25097fc90baf4d3e037882881886d3b3305",
+          "target_sha256": "af060007446747828b9f669b8933b25097fc90baf4d3e037882881886d3b3305"
+        },
+        {
+          "name": "06-drone-hangar-diagnostics.md",
+          "source_sha256": "941e26793cb176be311ca27ac3cf3beff756bdba14f75b2714fb4e73ae4b0af9",
+          "target_sha256": "941e26793cb176be311ca27ac3cf3beff756bdba14f75b2714fb4e73ae4b0af9"
+        },
+        {
+          "name": "07-spacecraft-navigation-screen.md",
+          "source_sha256": "39b1820431d97ff1e3f994e544496a89183458e9df841d035e66d8b7fe44e40a",
+          "target_sha256": "39b1820431d97ff1e3f994e544496a89183458e9df841d035e66d8b7fe44e40a"
+        },
+        {
+          "name": "08-cloister-command-archive.md",
+          "source_sha256": "4e1dea19d438c8e608d808197167fabf5cd5196371fc7aadbb209557c976cc36",
+          "target_sha256": "4e1dea19d438c8e608d808197167fabf5cd5196371fc7aadbb209557c976cc36"
+        },
+        {
+          "name": "09-robotic-choir-network-view.md",
+          "source_sha256": "9972524bf9812b9f7fdd21f8a49d64ea19ad9223cb8f07893232161eb52b048e",
+          "target_sha256": "9972524bf9812b9f7fdd21f8a49d64ea19ad9223cb8f07893232161eb52b048e"
+        },
+        {
+          "name": "10-combat-evasion-overlay.md",
+          "source_sha256": "f14185cce54f51dff2b76d9cd4d75d218d82b50aa92bcc6ec9dc2dfc5e5ae6a8",
+          "target_sha256": "f14185cce54f51dff2b76d9cd4d75d218d82b50aa92bcc6ec9dc2dfc5e5ae6a8"
+        },
+        {
+          "name": "11-retrofit-drydock-screen.md",
+          "source_sha256": "f91f457357b6dd8eb57d1971fe0d4d4ca0360b93658fe89800eccfc9cedacfc9",
+          "target_sha256": "f91f457357b6dd8eb57d1971fe0d4d4ca0360b93658fe89800eccfc9cedacfc9"
+        },
+        {
+          "name": "12-mission-debrief-screen.md",
+          "source_sha256": "318520e0fbf25c107fd67636cdd3ad47cfd2d0fe38bef8b94f8d7fafdad059e0",
+          "target_sha256": "318520e0fbf25c107fd67636cdd3ad47cfd2d0fe38bef8b94f8d7fafdad059e0"
+        },
+        {
+          "name": "index.md",
+          "source_sha256": "de588e4345203c0d6186a6600eea8e69092828417c5d50610db26c647e93f759",
+          "target_sha256": "de588e4345203c0d6186a6600eea8e69092828417c5d50610db26c647e93f759"
+        }
+      ]
+    }
+  ]
+}

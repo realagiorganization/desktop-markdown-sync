@@ -1,0 +1,11 @@
+[Unit]
+Description=desktop-markdown-sync service
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/desktop-markdown-sync render-fixtures --snapshot /opt/desktop-markdown-sync/state/example.json --fixtures-dir /tmp/desktop-markdown-sync
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
