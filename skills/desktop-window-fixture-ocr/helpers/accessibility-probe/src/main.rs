@@ -1,61 +1,120 @@
-use serde::Serialize;
 use std::env;
-use zbus::blocking::{Connection, Proxy};
+use std::process::{Command, Stdio};
 
-#[derive(Serialize)]
-struct StatusOutput {
-    is_enabled: bool,
-    screen_reader_enabled: bool,
-    bus_address: String,
+fn run(args: &[&str]) -> Result<String, String> {
+    let output = Command::new(args[0])
+        .args(&args[1..])
+        .stdin(Stdio::null())
+        .output()
+        .map_err(|err| format!("failed to spawn {}: {err}", args[0]))?;
+    if !output.status.success() {
+        return Err(String::from_utf8_lossy(&output.stderr).trim().to_string());
+    }
+    Ok(String::from_utf8_lossy(&output.stdout).trim().to_string())
 }
 
-#[derive(Serialize)]
-struct LabelOutput {
-    service: String,
-    path: String,
-    name: String,
-    description: String,
-    role_name: String,
-    child_count: i32,
+fn escape_json(value: &str) -> String {
+    value
+        .replace('\\', "\\\\")
+        .replace('"', "\\\"")
+        .replace('\n', "\\n")
 }
 
-fn status() -> Result<(), Box<dyn std::error::Error>> {
-    let connection = Connection::session()?;
-    let status = Proxy::new(&connection, "org.a11y.Bus", "/org/a11y/bus", "org.a11y.Status")?;
-    let bus = Proxy::new(&connection, "org.a11y.Bus", "/org/a11y/bus", "org.a11y.Bus")?;
-    let is_enabled: bool = status.get_property("IsEnabled")?;
-    let screen_reader_enabled: bool = status.get_property("ScreenReaderEnabled")?;
-    let bus_address: String = bus.call("GetAddress", &())?;
-    let output = StatusOutput {
-        is_enabled,
-        screen_reader_enabled,
-        bus_address,
-    };
-    println!("{}", serde_json::to_string_pretty(&output)?);
+fn print_status() -> Result<(), String> {
+    let enabled = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
+        "org.a11y.Bus",
+        "--object-path",
+        "/org/a11y/bus",
+        "--method",
+        "org.freedesktop.DBus.Properties.Get",
+        "org.a11y.Status",
+        "IsEnabled",
+    ])?;
+    let screen_reader_enabled = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
+        "org.a11y.Bus",
+        "--object-path",
+        "/org/a11y/bus",
+        "--method",
+        "org.freedesktop.DBus.Properties.Get",
+        "org.a11y.Status",
+        "ScreenReaderEnabled",
+    ])?;
+    let bus_address = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
+        "org.a11y.Bus",
+        "--object-path",
+        "/org/a11y/bus",
+        "--method",
+        "org.a11y.Bus.GetAddress",
+    ])?;
+    println!(
+        "{{\n  \"is_enabled_raw\": \"{}\",\n  \"screen_reader_enabled_raw\": \"{}\",\n  \"bus_address_raw\": \"{}\"\n}}",
+        escape_json(&enabled),
+        escape_json(&screen_reader_enabled),
+        escape_json(&bus_address),
+    );
     Ok(())
 }
 
-fn labels(service: &str, path: &str) -> Result<(), Box<dyn std::error::Error>> {
-    let connection = Connection::session()?;
-    let accessible = Proxy::new(
-        &connection,
+fn print_labels(service: &str, path: &str) -> Result<(), String> {
+    let name = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
         service,
+        "--object-path",
         path,
+        "--method",
+        "org.freedesktop.DBus.Properties.Get",
         "org.a11y.atspi.Accessible",
-    )?;
-    let name: String = accessible.get_property("Name")?;
-    let description: String = accessible.get_property("Description")?;
-    let child_count: i32 = accessible.get_property("ChildCount")?;
-    let role_name: String = accessible.call("GetRoleName", &())?;
-    let output = LabelOutput {
-        service: service.to_string(),
-        path: path.to_string(),
-        name,
-        description,
-        role_name,
-        child_count,
-    };
-    println!("{}", serde_json::to_string_pretty(&output)?);
+        "Name",
+    ])?;
+    let description = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
+        service,
+        "--object-path",
+        path,
+        "--method",
+        "org.freedesktop.DBus.Properties.Get",
+        "org.a11y.atspi.Accessible",
+        "Description",
+    ])?;
+    let child_count = run(&[
+        "gdbus",
+        "call",
+        "--session",
+        "--dest",
+        service,
+        "--object-path",
+        path,
+        "--method",
+        "org.freedesktop.DBus.Properties.Get",
+        "org.a11y.atspi.Accessible",
+        "ChildCount",
+    ])?;
+    println!(
+        "{{\n  \"service\": \"{}\",\n  \"path\": \"{}\",\n  \"name_raw\": \"{}\",\n  \"description_raw\": \"{}\",\n  \"child_count_raw\": \"{}\"\n}}",
+        escape_json(service),
+        escape_json(path),
+        escape_json(&name),
+        escape_json(&description),
+        escape_json(&child_count),
+    );
     Ok(())
 }
 
@@ -64,15 +123,25 @@ fn usage() -> ! {
     std::process::exit(2);
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<(), String> {
     let mut args = env::args().skip(1);
     match args.next().as_deref() {
-        Some("status") => status(),
+        Some("status") => print_status(),
         Some("labels") => {
             let service = args.next().unwrap_or_else(|| usage());
             let path = args.next().unwrap_or_else(|| usage());
-            labels(&service, &path)
+            print_labels(&service, &path)
         }
         _ => usage(),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::escape_json;
+
+    #[test]
+    fn escapes_quotes_and_newlines() {
+        assert_eq!(escape_json("a\"b\nc"), "a\\\"b\\nc");
     }
 }
