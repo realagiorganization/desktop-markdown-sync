@@ -15,6 +15,8 @@ The repo now has two complementary modes:
 - sync mode: export live desktops into machine-readable Markdown and apply edited Markdown back onto the desktop
 - fixture mode: capture richer text-only fixture files with KWin metadata, layout notes, OCR hooks, and accessibility follow-up
 
+Fixture files now record explicit evidence provenance for layout and visible-content summaries so later OCR or accessibility enrichment can be compared against the original KWin and screenshot-derived claims.
+
 ## Core workflow
 
 1. `desktop-markdown-sync export` snapshots live virtual desktop state into Markdown files.
@@ -30,6 +32,12 @@ The repo now has two complementary modes:
 - `packaging/`: systemd user service and `.deb` packaging assets
 - `docker/Dockerfile`: container smoke path for the fixture tooling
 - `docker/KaliHarness.Dockerfile`: Kali Linux harness with a parent-style `/home/standart` mirror and fixture-pack sync
+
+## Fixture collections
+
+- `fixtures/desktop-*.md` remains the live-desktop fixture pack rendered from a Plasma snapshot.
+- Nested fixture collections such as `fixtures/console-games/` are supported by the harness manifest and mirror logic, so repo-friendly text fixture packs can live beside the live desktop set.
+- Each desktop fixture now includes `Layout sources` and `Visible content sources` lines to make the metadata-to-OCR fallback chain explicit.
 
 ## Main commands
 

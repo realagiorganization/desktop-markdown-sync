@@ -2,7 +2,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from .fixture_notes import NOTES_BY_DESKTOP_INDEX
+from .fixture_notes import desktop_note_for
+
+
+def _format_sources(sources: tuple[str, ...]) -> str:
+    return ", ".join(f"`{source}`" for source in sources)
 
 
 def _window_lines(window: dict) -> list[str]:
@@ -63,17 +67,16 @@ def infer_content_hint(*, title: str, window_class: str) -> str:
 
 
 def render_fixture(desktop: dict) -> str:
-    notes = NOTES_BY_DESKTOP_INDEX.get(desktop["desktop_index"], {})
+    notes = desktop_note_for(desktop["desktop_index"])
     lines = [
         f"# Desktop {desktop['desktop_index']:02d} - {desktop['desktop_name']}",
         "",
         f"- Desktop id: `{desktop['desktop_id']}`",
         f"- Window count: `{len(desktop['windows'])}`",
-        (f"- Layout summary: {notes.get('layout', 'No additional manual layout note recorded.')}"),
-        (
-            "- Visible content summary: "
-            f"{notes.get('visible', 'No manual screenshot note recorded.')}"
-        ),
+        f"- Layout summary: {notes['layout']}",
+        f"- Layout sources: {_format_sources(notes['layout_sources'])}",
+        f"- Visible content summary: {notes['visible']}",
+        f"- Visible content sources: {_format_sources(notes['visible_sources'])}",
         "",
         "## Windows",
     ]

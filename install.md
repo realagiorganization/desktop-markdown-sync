@@ -31,6 +31,8 @@ desktop-markdown-sync render-fixtures \
   --fixtures-dir fixtures
 ```
 
+Rendered fixture markdown now includes source-attribution lines for layout and visible-content summaries so manual screenshot review, OCR output, and accessibility follow-up can be compared against the original KWin metadata.
+
 ## Optional smoke paths
 
 ```bash
