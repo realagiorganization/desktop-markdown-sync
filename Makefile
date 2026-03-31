@@ -70,7 +70,7 @@ docker-harness-test: docker-harness-build
 	@docker run --rm \
 		-v "$(PWD)/$(DOCKER_HARNESS_ARTIFACTS):/artifacts" \
 		$(DOCKER_HARNESS_IMAGE) \
-		bash /opt/desktop-markdown-sync/docker/run-kali-harness.sh /artifacts
+		/opt/desktop-markdown-sync/docker/run-kali-harness.sh /artifacts
 
 docker-harness-ui-video: docker-harness-test
 	@ls -l $(DOCKER_HARNESS_ARTIFACTS)/ui/fixture-pack-demo.mp4
