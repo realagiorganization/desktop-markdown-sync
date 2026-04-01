@@ -8,3 +8,5 @@
 - [ ] Exercise the daemon on a live Kali Plasma session and confirm Markdown edits safely rename/reselect desktops.
 - [ ] Expand the reconstruction layer to move matching windows and relaunch richer app intents.
 - [ ] Refresh the fixture set after material workspace changes and expand accessibility collection once AT-SPI is enabled.
+- [ ] Tighten the runtime apply path to reconcile live windows more deterministically than launch-only replay.
+- [ ] Raise unit coverage above the warning threshold so the warning path becomes exceptional instead of routine.

@@ -4,6 +4,7 @@
 [![Quality](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/quality.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/quality.yml)
 [![Coverage](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/coverage.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/coverage.yml)
 [![Static Analysis](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/static-analysis.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/static-analysis.yml)
+[![Typecheck](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/typecheck.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/typecheck.yml)
 [![CodeQL](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/codeql.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/codeql.yml)
 [![Kali Harness](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/kali-harness.yml/badge.svg)](https://github.com/realagiorganization/desktop-markdown-sync/actions/workflows/kali-harness.yml)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
@@ -47,6 +48,8 @@ make verify
 make quality
 make coverage
 make static-analysis
+make typecheck
+make package-check
 make build-deb
 make predictive-build-test-all
 make docker-test
@@ -59,4 +62,4 @@ make act-run
 - Runtime reconstruction is intentionally best effort. Desktop names, current-desktop selection, and explicit launch commands are safe/default paths.
 - The fixture/OCR path is text-first and does not commit screenshots by default.
 - The Kali harness emits `artifacts/outputs/kali-harness/mirror/harness-manifest.json` and records a fixture-pack UI demo video for CI artifact upload.
-- `main` is intended to be merge-protected with required status checks for package, quality, coverage, static analysis, Kali harness, and CodeQL.
+- `main` is intended to be merge-protected with required status checks for package, quality, coverage, static analysis, typecheck, Kali harness, and CodeQL.

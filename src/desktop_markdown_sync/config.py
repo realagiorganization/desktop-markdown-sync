@@ -13,6 +13,14 @@ class SyncConfig:
     codex_bin: str = "codex"
     enable_codex_reconcile: bool = True
 
+    def __post_init__(self) -> None:
+        self.markdown_dir = Path(self.markdown_dir).expanduser()
+        self.state_dir = Path(self.state_dir).expanduser()
+        if self.poll_seconds <= 0:
+            raise ValueError("poll_seconds must be > 0")
+        if not self.codex_bin.strip():
+            raise ValueError("codex_bin must not be blank")
+
     @classmethod
     def from_env(cls) -> SyncConfig:
         home = Path(os.environ.get("HOME", "~")).expanduser()

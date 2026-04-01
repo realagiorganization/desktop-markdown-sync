@@ -8,6 +8,7 @@ python3 -m venv .venv
 . .venv/bin/activate
 make install-dev
 make verify
+make act-run-yellow
 ```
 
 ## Kali package build
@@ -39,6 +40,7 @@ Rendered fixture markdown now includes source-attribution lines for layout and v
 make docker-test
 make docker-harness-test
 make act-run
+make act-run-yellow
 ```
 
 `make docker-harness-test` writes a parent-style `/home/standart` mirror, fixture-pack
