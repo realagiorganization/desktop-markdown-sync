@@ -3,7 +3,9 @@
 - Desktop id: `bd47d77d-d3a8-47bb-b5cf-cba06a185d5d`
 - Window count: `1`
 - Layout summary: Single fullscreen Konsole tmux client on a desktop named for `foot`, indicating the naming plan is ahead of the actual live window inventory.
+- Layout sources: `kwin-metadata`
 - Visible content summary: The visible content matches a fullscreen tmux client terminal with the same timeout and prompt residue seen on the SSH desktops.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 

@@ -3,7 +3,9 @@
 - Desktop id: `100d3321-a024-4302-bb46-fdbad891a074`
 - Window count: `4`
 - Layout summary: Three fullscreen `main [xfce4-terminal]` windows and one fullscreen `ssh-kali14 [xfce4-terminal]` window occupy the same origin and size.
+- Layout sources: `kwin-metadata`
 - Visible content summary: The visible frame is mostly black with the KDE application launcher open on the right, which is consistent with stacked fullscreen terminal sessions obscuring each other.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 

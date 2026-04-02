@@ -3,7 +3,9 @@
 - Desktop id: `b70f5fea-d80d-4908-aba6-576707400747`
 - Window count: `7`
 - Layout summary: This is the busiest remote-terminal desktop in the capture: one fullscreen base layer plus six floating terminal overlays in a loose cascade.
+- Layout sources: `kwin-metadata`, `screenshot`
 - Visible content summary: The desktop is dominated by one fullscreen xfce4-terminal session with several floating `wezterm` `tmux` windows offset diagonally over it.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 
