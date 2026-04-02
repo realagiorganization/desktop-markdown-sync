@@ -61,6 +61,7 @@ class CliTests(unittest.TestCase):
             files = sorted(fixtures_dir.glob("desktop-*.md"))
             self.assertEqual(len(files), 2)
             self.assertIn("Window count: `1`", files[0].read_text())
+            self.assertIn("Layout sources:", files[0].read_text())
             self.assertIn("No KWin-managed windows were present", files[1].read_text())
 
 

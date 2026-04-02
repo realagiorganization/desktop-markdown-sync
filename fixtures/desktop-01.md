@@ -3,7 +3,9 @@
 - Desktop id: `cb248d57-7f51-4912-9bce-b3e1f5a14a9f`
 - Window count: `2`
 - Layout summary: The desktop behaves like a stacked fullscreen SSH workspace: two Konsole tmux clients report identical fullscreen geometry and only the top client is visibly readable.
+- Layout sources: `kwin-metadata`, `screenshot`
 - Visible content summary: Foreground terminal text shows `standard@kali-strix1 ~`, a timeout for `10.100.0.44`, then a second prompt `standard@kali14 ~` with the partial token `ZEKS_`.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 

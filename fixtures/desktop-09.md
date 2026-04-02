@@ -3,7 +3,9 @@
 - Desktop id: `3f7ee881-2a72-479c-a2d1-f25b73e8e586`
 - Window count: `5`
 - Layout summary: One fullscreen qterminal anchors the desktop while Discord, Firefox, Konsole, and VS Code share the right and center portions in overlapping non-fullscreen windows.
+- Layout sources: `kwin-metadata`, `screenshot`
 - Visible content summary: This is the most information-dense desktop: fullscreen qterminal behind overlapping Firefox, Discord, Konsole, VS Code, and launcher surfaces. Readable text includes project notes, package-management output, and an active Codex session panel.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 

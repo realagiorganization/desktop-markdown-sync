@@ -8,6 +8,7 @@ python3 -m venv .venv
 . .venv/bin/activate
 make install-dev
 make verify
+make act-run-yellow
 ```
 
 ## Kali package build
@@ -31,12 +32,15 @@ desktop-markdown-sync render-fixtures \
   --fixtures-dir fixtures
 ```
 
+Rendered fixture markdown now includes source-attribution lines for layout and visible-content summaries so manual screenshot review, OCR output, and accessibility follow-up can be compared against the original KWin metadata.
+
 ## Optional smoke paths
 
 ```bash
 make docker-test
 make docker-harness-test
 make act-run
+make act-run-yellow
 ```
 
 `make docker-harness-test` writes a parent-style `/home/standart` mirror, fixture-pack

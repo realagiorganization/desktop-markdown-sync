@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: install-dev lint test verify verify-all quality quality-ruff quality-ruff-github quality-format quality-yaml quality-markdown quality-files quality-shell coverage static-analysis build-deb docker-test docker-harness-build docker-harness-test docker-harness-ui-video predictive-build-test-all act-run act-run-yellow clean
+.PHONY: install-dev lint test verify verify-all quality quality-ruff quality-ruff-github quality-format quality-yaml quality-markdown quality-files quality-shell repo-contract coverage static-analysis typecheck package-check build-deb docker-test docker-harness-build docker-harness-test docker-harness-ui-video predictive-build-test-all act-run act-run-yellow clean
 
 PYTHON := $(shell if [ -x .venv/bin/python ]; then echo .venv/bin/python; else command -v python3; fi)
 RUFF := $(PYTHON) -m ruff
@@ -44,6 +44,9 @@ quality-files:
 quality-shell:
 	@$(PYTHON) scripts/check_shell_scripts.py
 
+repo-contract:
+	@$(PYTHON) scripts/check_repo_contract.py
+
 coverage:
 	@$(PYTEST) --cov-fail-under=$(COVERAGE_FAIL_UNDER)
 	@$(PYTHON) scripts/coverage_gate.py coverage.xml --warn-under $(COVERAGE_WARN_UNDER)
@@ -54,7 +57,14 @@ static-analysis:
 	@$(PYTHON) -m bandit -q -r src scripts -f json -o .cache/bandit.json --exit-zero
 	@$(PYTHON) scripts/bandit_gate.py .cache/bandit.json
 
-verify-all: quality coverage static-analysis build-deb
+typecheck:
+	@$(PYTHON) -m mypy
+
+package-check:
+	@$(PYTHON) -m pip check
+	@$(PYTHON) -m build --sdist --wheel
+
+verify-all: quality repo-contract coverage static-analysis typecheck package-check build-deb
 
 verify: verify-all
 
@@ -94,6 +104,16 @@ predictive-build-test-all:
 	@$(MAKE) static-analysis > .cache/predictive-static-analysis.log 2>&1; rc=$$?; \
 		printf 'actual: static-analysis exits %s\n' "$$rc" >> $(PREDICTIVE_LOG); \
 		cat .cache/predictive-static-analysis.log; \
+		test "$$rc" -eq 0
+	@printf 'predicted: typecheck exits 0\n' >> $(PREDICTIVE_LOG)
+	@$(MAKE) typecheck > .cache/predictive-typecheck.log 2>&1; rc=$$?; \
+		printf 'actual: typecheck exits %s\n' "$$rc" >> $(PREDICTIVE_LOG); \
+		cat .cache/predictive-typecheck.log; \
+		test "$$rc" -eq 0
+	@printf 'predicted: package-check exits 0\n' >> $(PREDICTIVE_LOG)
+	@$(MAKE) package-check > .cache/predictive-package-check.log 2>&1; rc=$$?; \
+		printf 'actual: package-check exits %s\n' "$$rc" >> $(PREDICTIVE_LOG); \
+		cat .cache/predictive-package-check.log; \
 		test "$$rc" -eq 0
 	@printf 'predicted: deb build exits 0\n' >> $(PREDICTIVE_LOG)
 	@$(PYTHON) scripts/build_deb.py > .cache/predictive-build-deb.log 2>&1; rc=$$?; \

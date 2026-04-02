@@ -23,6 +23,7 @@ class FixturePackSpec:
     source_dir: str
     file_glob: str
     target_dir: str
+    recursive: bool = False
 
 
 FIXTURE_PACK_SPECS = (
@@ -37,6 +38,7 @@ FIXTURE_PACK_SPECS = (
         source_dir="fixtures/console-games",
         file_glob="*.md",
         target_dir="subprojects/desktop_markdown_sync/fixtures/console-games",
+        recursive=True,
     ),
     FixturePackSpec(
         name="bhakti",
@@ -86,7 +88,12 @@ def file_sha256(path: Path) -> str:
 
 
 def fixture_pack_entries(repo_root: Path, spec: FixturePackSpec) -> list[Path]:
-    return sorted((repo_root / spec.source_dir).glob(spec.file_glob))
+    source_root = repo_root / spec.source_dir
+    if spec.recursive:
+        iterator = source_root.rglob(spec.file_glob)
+    else:
+        iterator = source_root.glob(spec.file_glob)
+    return sorted(path for path in iterator if path.is_file())
 
 
 def fixture_pack_manifest(repo_root: Path) -> list[dict[str, object]]:
@@ -102,6 +109,7 @@ def fixture_pack_manifest(repo_root: Path) -> list[dict[str, object]]:
                     {
                         "name": path.name,
                         "relative_path": str(path.relative_to(repo_root)),
+                        "collection_path": str(path.relative_to(repo_root / spec.source_dir)),
                         "sha256": file_sha256(path),
                     }
                     for path in files
@@ -182,11 +190,14 @@ def sync_harness_home(repo_root: Path, output_root: Path) -> Path:
         destination_dir.mkdir(parents=True, exist_ok=True)
         synced_files = []
         for source in source_files:
-            destination = destination_dir / source.name
+            relative_source = source.relative_to(repo_root / spec.source_dir)
+            destination = destination_dir / relative_source
+            destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(source, destination)
             synced_files.append(
                 {
                     "name": source.name,
+                    "collection_path": str(relative_source),
                     "source_sha256": file_sha256(source),
                     "target_sha256": file_sha256(destination),
                 }

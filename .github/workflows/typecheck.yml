@@ -1,4 +1,4 @@
-name: quality
+name: typecheck
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  quality:
+  typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -22,14 +22,8 @@ jobs:
       - name: Install package and dev dependencies
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
 
-      - name: Ruff annotations
-        run: python -m ruff check . --output-format=github
+      - name: Repo contract
+        run: make repo-contract
 
-      - name: Quality suite
-        run: |
-          make quality-ruff
-          make quality-format
-          make quality-yaml
-          make quality-markdown
-          make quality-files
-          make quality-shell
+      - name: Typecheck
+        run: make typecheck

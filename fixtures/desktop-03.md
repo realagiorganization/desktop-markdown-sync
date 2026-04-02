@@ -3,7 +3,9 @@
 - Desktop id: `28f6237f-11eb-436e-bf74-a42971aff42f`
 - Window count: `3`
 - Layout summary: Two fullscreen kitty windows and one fullscreen Konsole client are stacked at identical geometry, so this desktop is primarily an overlapped SSH terminal pile rather than a tiled layout.
+- Layout sources: `kwin-metadata`
 - Visible content summary: The readable surface is still terminal-first, with the remote host label in the title bar and the same timeout/prompt residue at the top-left.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 

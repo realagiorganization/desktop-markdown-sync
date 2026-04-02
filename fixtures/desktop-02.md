@@ -3,7 +3,9 @@
 - Desktop id: `6f1b481c-a244-49ef-9831-12090dc50282`
 - Window count: `2`
 - Layout summary: A fullscreen Remmina window occupies the full desktop and a fullscreen Konsole tmux client is also present in the stack.
+- Layout sources: `kwin-metadata`
 - Visible content summary: The visible frame shows a Kali login dialog centered on the screen. The screenshot suggests a remote login prompt even though the window title names a Remmina session.
+- Visible content sources: `screenshot`, `kwin-metadata`
 
 ## Windows
 
